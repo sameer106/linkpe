@@ -59,12 +59,12 @@
 			linkpeURL = `${window.location.protocol}//${window.location.hostname}/pay`;
 		}
 
-		linkpeURL += `?pa=${pa}&pn=encodeURIComponent(${pn})&cu=INR`;
+		linkpeURL += `?pa=${pa}&pn=${pn}&cu=INR`;
 		if (!isNaN(am) && am !== null && am !== "") {
 			linkpeURL += `&am=${am}`;
 		}
 
-		document.getElementById("linkpeURL").innerHTML = linkpeURL;
+		document.getElementById("linkpeURL").innerHTML = encodeURIComponent(linkpeURL);
 		document.getElementById("whatsapp").href = "https://wa.me/?text=Hi%2C%20You%20can%20pay%20me%20by%20this%20Upi%20Payment%20Link%0A%20" + encodeURIComponent(linkpeURL);
 		document.getElementById("linkpediv").style.display = "block";
 		document.getElementById("linkpeform").style.display = "none";
