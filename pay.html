@@ -17,7 +17,13 @@
 			<div class="card-content">
 				<a href="linkpe.html?new"><img src="img/logo.png" height="50"></a>
 				<h4 id="name" style="color: #101010;"></h4>
-					
+				<div style="margin-top: 2px;">
+					<a id="linkpe">
+						<img src="img/upi.png" height="80">
+						<br>
+						<button class='btn'>Click here to Pay Now</button>
+					</a>
+				</div>
 					
 			</div>
 		</div>
@@ -33,7 +39,9 @@
 			if (pn !== "") user = pn;
 			else user = pa;
 			const url = 'upi://pay' + queryString;
-			window.open(url);
+			(function () {
+				document.getElementById("linkpe").click();
+			})();
 			
 		} else {
 			location.replace("linkpe.html?error");
