@@ -56,7 +56,7 @@
 			console.log("dev");
 			linkpeURL = `${window.location.protocol}//${window.location.hostname}:${window.location.port}/index.html`;
 		} else {
-			linkpeURL = `${window.location.protocol}//${window.location.hostname}/linkpe`;
+			linkpeURL = `${window.location.protocol}//${window.location.hostname}/pay`;
 		}
 
 		linkpeURL += `?pa=${pa}&pn=${pn}&cu=INR`;
@@ -75,7 +75,7 @@
 					foreground: '#000',
 					size: 200,
 					level: 'H',
-					value: linkpeURL
+					value: linkpeURL.replace("https://ropayy.com/linkpe","upi://pay")
 				});
 				document.getElementById("qr").style.display = "block";
 			})();
