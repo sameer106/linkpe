@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- Primary Meta Tags -->
+	<title>RoPayy | UPI LINK Generator</title>
+	<meta name="title" content="RoPayy | UPI LINK Generator">
+	<meta name="description" content="RoPayy | UPI LINK Generator">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/main.css">
+	
+
+<body>
+	<center>
+		<div class="card">
+			<div class="card-content">
+				<a href="linkpe.html?new"><img src="img/logo.png" height="50"></a>
+				<h4 id="name" style="color: #101010;"></h4>
+					
+					
+			</div>
+		</div>
+	</center>
+	<script src="qrious/qrious.min.js"></script>
+	<script>
+		if (window.location.search.indexOf('pa') > -1) {
+			const queryString = window.location.search;
+			const urlParams = new URLSearchParams(queryString);
+			const pn = urlParams.get('pn');
+			const pa = urlParams.get('pa');
+			var user;
+			if (pn !== "") user = pn;
+			else user = pa;
+			const url = 'upi://pay' + queryString;
+			window.open(url);
+			
+		} else {
+			location.replace("linkpe.html?error");
+		}
+	</script>
+</body>
+
+</html>
