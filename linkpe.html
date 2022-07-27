@@ -59,7 +59,7 @@
 			linkpeURL = `${window.location.protocol}//${window.location.hostname}/pay`;
 		}
 
-		linkpeURL += `?pa=${pa}&pn=${pn}&cu=INR`;
+		linkpeURL += `?pa=${pa}&pn=encodeURIComponent(${pn})&cu=INR`;
 		if (!isNaN(am) && am !== null && am !== "") {
 			linkpeURL += `&am=${am}`;
 		}
@@ -75,7 +75,7 @@
 					foreground: '#000',
 					size: 200,
 					level: 'H',
-					value: linkpeURL.replace("https://ropayy.com/linkpe","upi://pay").replace("https://ropayy.com/pay","upi://pay")
+					value: encodeURIComponent(linkpeURL.replace("https://ropayy.com/linkpe","upi://pay").replace("https://ropayy.com/pay","upi://pay"))
 				});
 				document.getElementById("qr").style.display = "block";
 			})();
