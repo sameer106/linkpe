@@ -17,7 +17,7 @@
 				<a href=""><img src="img/logo.png" height="50"></a>
 				<br>
 				<h4 style="color: #DAE0E2;">Create UPI Payment Request Link </h4>
-				<canvas id="qr"></canvas>
+				<canvas id="qr" style="display:none;"></canvas>
 				<img src="img/upi.png" height="100">
 				<br>
 				<div id="linkpediv" style="display:none;">
@@ -77,6 +77,7 @@
 					level: 'H',
 					value: linkpeURL
 				});
+				document.getElementById("qr").style.display = "block";
 			})();
 	}
 	function copyUpiUrl() {
