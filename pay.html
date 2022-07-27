@@ -39,9 +39,8 @@
 			if (pn !== "") user = pn;
 			else user = pa;
 			const url = 'upi://pay' + queryString;
-			(function () {
-				document.getElementById("linkpe").click();
-			})();
+			document.getElementById("linkpe").click();
+			
 			
 		} else {
 			location.replace("linkpe.html?error");
