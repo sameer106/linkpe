@@ -17,6 +17,7 @@
 				<a href=""><img src="img/logo.png" height="50"></a>
 				<br>
 				<h4 style="color: #DAE0E2;">Create UPI Payment Request Link </h4>
+				<canvas id="qr"></canvas>
 				<img src="img/upi.png" height="100">
 				<br>
 				<div id="linkpediv" style="display:none;">
@@ -66,6 +67,16 @@
 		document.getElementById("whatsapp").href = "https://wa.me/?text=Hi%2C%20You%20can%20pay%20me%20by%20this%20Upi%20Payment%20Link%0A%20" + encodeURIComponent(linkpeURL);
 		document.getElementById("linkpediv").style.display = "block";
 		document.getElementById("linkpeform").style.display = "none";
+		(function () {
+				var qr = new QRious({
+					element: document.getElementById('qr'),
+					background: '#fff',
+					foreground: '#000',
+					size: 200,
+					level: 'H',
+					value: linkpeURL
+				});
+			})();
 	}
 	function copyUpiUrl() {
 		var copylinkpe = document.getElementById("linkpeURL");
