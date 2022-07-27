@@ -64,7 +64,7 @@
 			linkpeURL += `&am=${am}`;
 		}
 
-		document.getElementById("linkpeURL").innerHTML = encodeURIComponent(linkpeURL);
+		document.getElementById("linkpeURL").innerHTML = linkpeURL;
 		document.getElementById("whatsapp").href = "https://wa.me/?text=Hi%2C%20You%20can%20pay%20me%20by%20this%20Upi%20Payment%20Link%0A%20" + encodeURIComponent(linkpeURL);
 		document.getElementById("linkpediv").style.display = "block";
 		document.getElementById("linkpeform").style.display = "none";
@@ -75,7 +75,7 @@
 					foreground: '#000',
 					size: 200,
 					level: 'H',
-					value: encodeURIComponent(linkpeURL.replace("https://ropayy.com/linkpe","upi://pay").replace("https://ropayy.com/pay","upi://pay"))
+					value: linkpeURL.replace("https://ropayy.com/linkpe","upi://pay").replace("https://ropayy.com/pay","upi://pay")
 				});
 				document.getElementById("qr").style.display = "block";
 			})();
